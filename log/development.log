@@ -197,3 +197,706 @@ Migrating to CreateProfessionals (20170126211108)
   [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
   [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "movies" ("title", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Raiders of the Lost Ark"], ["release_date", 1981-06-12 00:00:00 UTC], ["created_at", 2017-01-26 21:40:06 UTC], ["updated_at", 2017-01-26 21:40:06 UTC]]
   [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/movies/create" for ::1 at 2017-01-26 19:51:49 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#create as HTML
+  Rendering movies/create.html.erb within layouts/application
+  Rendered movies/create.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 2200ms (Views: 2144.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/index" for ::1 at 2017-01-26 19:59:46 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 222ms (Views: 174.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 20:13:04 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 223ms (Views: 182.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 20:14:44 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 692ms (Views: 642.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 20:19:50 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 9ms (ActiveRecord: 1.5ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Movie without an ID):
+  
+app/controllers/movies_controller.rb:8:in `show'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1468.0ms)
+Started GET "/movies/1" for ::1 at 2017-01-26 20:20:23 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Movie without an ID):
+  
+app/controllers/movies_controller.rb:8:in `show'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (15.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1495.1ms)
+Started GET "/movies/1" for ::1 at 2017-01-26 20:21:27 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 258ms (Views: 189.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 20:23:27 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 243ms (Views: 204.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/-1" for ::1 at 2017-01-26 20:28:47 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"-1"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", -1], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Completed 404 Not Found in 229ms (Views: 218.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 20:28:56 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 262ms (Views: 188.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 20:28:58 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 223ms (Views: 170.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/-10" for ::1 at 2017-01-26 20:29:05 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"-10"}
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", -10], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Completed 404 Not Found in 226ms (Views: 221.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 20:34:32 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 218ms (Views: 179.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/movies/2" for ::1 at 2017-01-26 20:35:01 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 241ms (Views: 186.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/4" for ::1 at 2017-01-26 20:35:05 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 302ms (Views: 253.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/3" for ::1 at 2017-01-26 20:37:11 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 213ms (Views: 163.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:40:27 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Completed 404 Not Found in 272ms (Views: 268.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:42:15 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (1.0ms)
+Completed 404 Not Found in 454ms (Views: 429.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:42:19 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Completed 404 Not Found in 249ms (Views: 246.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 20:42:22 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 228ms (Views: 189.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:42:25 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Completed 404 Not Found in 223ms (Views: 219.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:42:28 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"new"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (0.5ms)
+Completed 404 Not Found in 248ms (Views: 242.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:43:31 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 245ms (Views: 204.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 20:43:35 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 221ms (Views: 166.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 20:43:37 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 228ms (Views: 193.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/3" for ::1 at 2017-01-26 20:43:39 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 253ms (Views: 205.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:43:43 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 210ms (Views: 164.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:49:50 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 369ms (ActiveRecord: 3.5ms)
+
+
+  
+SyntaxError (C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         start_year: 1900,
+     ^
+C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         order: [:day, :month...
+     ^):
+  
+app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (3553.3ms)
+Started GET "/movies/new" for ::1 at 2017-01-26 20:50:01 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 2481ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         start_year: 1900,
+     ^
+C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         order: [:day, :month...
+     ^):
+  
+app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (3904.7ms)
+Started GET "/movies" for ::1 at 2017-01-26 20:50:15 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 1666ms (Views: 1493.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:50:25 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 340ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         start_year: 1900,
+     ^
+C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         order: [:day, :month...
+     ^):
+  
+app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (3546.1ms)
+Started GET "/movies/new" for ::1 at 2017-01-26 20:53:10 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 3.0ms)
+
+
+  
+SyntaxError (C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         start_year: 1900,
+     ^
+C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         order: [:day, :month...
+     ^):
+  
+app/views/movies/new.html.erb:11: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/movies/new.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (3546.3ms)
+Started GET "/movies/new" for ::1 at 2017-01-26 20:54:05 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (270.5ms)
+Completed 200 OK in 979ms (Views: 848.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/create" for ::1 at 2017-01-26 20:57:12 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (1.5ms)
+Completed 404 Not Found in 565ms (Views: 539.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/movies/create" for ::1 at 2017-01-26 20:57:21 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  Rendering public/404.html within layouts/application
+  Rendered public/404.html within layouts/application (1.0ms)
+Completed 404 Not Found in 731ms (Views: 698.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 20:57:59 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 533ms (Views: 434.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for ::1 at 2017-01-26 20:58:10 -0200
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uqDuxMOc/QKmRvl0EhrCOMLHAoHun0rxbsramUA38rSUJ/ev3ebPzQSoPnyQ9Dq/+rKOLz58TqKFWWcUYWpcGw==", "movie"=>{"title"=>"Armagedom", "release_date(3i)"=>"26", "release_date(2i)"=>"1", "release_date(1i)"=>"2017", "description"=>"teste"}, "commit"=>"Create Movie"}
+  Rendering movies/create.html.erb within layouts/application
+  Rendered movies/create.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 519ms (Views: 424.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 21:07:07 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+SyntaxError (C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/controllers/movies_controller.rb:24: syntax error, unexpected tIVAR, expecting =>
+      redirect_to action: :show, :id @movie.id
+                                           ^):
+  
+app/controllers/movies_controller.rb:24: syntax error, unexpected tIVAR, expecting =>
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (38.0ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (4071.1ms)
+Started GET "/movies/new" for ::1 at 2017-01-26 21:08:31 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (110.5ms)
+Completed 200 OK in 1365ms (Views: 1256.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:09:17 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 569ms (Views: 484.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:10:06 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 1353ms (Views: 1222.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 21:11:49 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 1417ms (Views: 1242.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-01-26 21:12:51 -0200
+Processing by MoviesController#new as HTML
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/new.html.erb within layouts/application (109.5ms)
+Completed 200 OK in 608ms (Views: 520.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/movies" for ::1 at 2017-01-26 21:13:07 -0200
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HideB7No61bPRQhL9N5hGS1Gf8MYuWF6jYVa6np5BpkwoEdsrRLZmW2rz0N2MJmeFTPzbchaZSlmFudnWySoNg==", "movie"=>{"title"=>"Armagedom", "release_date(3i)"=>"26", "release_date(2i)"=>"1", "release_date(1i)"=>"2017", "description"=>"BUMM"}, "commit"=>"Create Movie"}
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Armagedom"], ["description", "BUMM"], ["release_date", 2017-01-26 00:00:00 UTC], ["created_at", 2017-01-26 23:13:07 UTC], ["updated_at", 2017-01-26 23:13:07 UTC]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/5
+Completed 302 Found in 41ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/movies/5" for ::1 at 2017-01-26 21:13:07 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 512ms (Views: 419.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-01-26 21:13:15 -0200
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/railties-5.0.1/lib/rails/templates/rails/welcome/index.html.erb (6.5ms)
+Completed 200 OK in 230ms (Views: 104.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:13:20 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 532ms (Views: 448.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2017-01-26 21:20:43 -0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/edit.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 370ms (ActiveRecord: 4.0ms)
+
+
+  
+SyntaxError (C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/edit.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         start_year: 1900,
+     ^
+C:/Users/George Ruchlejmer/Dropbox/Development/aula-rails/workspace/my_movies/app/views/movies/edit.html.erb:14: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+         order: [:day, :month...
+     ^):
+  
+app/views/movies/edit.html.erb:13: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+app/views/movies/edit.html.erb:14: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (13.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (3559.0ms)
+Started GET "/movies/1/edit" for ::1 at 2017-01-26 21:21:34 -0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/edit.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 614ms (Views: 494.6ms | ActiveRecord: 1.0ms)
+
+
+Started PUT "/movies/1" for ::1 at 2017-01-26 21:21:41 -0200
+  
+AbstractController::ActionNotFound (The action 'update' could not be found for MoviesController):
+  
+actionpack (5.0.1) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.1) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.1) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.1) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.1) lib/action_dispatch/routing/route_set.rb:725:in `call'
+rack (2.0.1) lib/rack/etag.rb:25:in `call'
+rack (2.0.1) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.1) lib/rack/head.rb:12:in `call'
+rack (2.0.1) lib/rack/session/abstract/id.rb:222:in `context'
+rack (2.0.1) lib/rack/session/abstract/id.rb:216:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.0.1) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout
+  Rendered C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (1.0ms)
+Started PUT "/movies/1" for ::1 at 2017-01-26 21:28:55 -0200
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"105+Ay8uDhyhsH/YRwyidExCwGI3HzYB5gjUQXG6cwr5yWdoMVQ80wNeuNDF4lrzdDdMzOf8MlINm2nMUOfdpQ==", "movie"=>{"title"=>"Alladin", "release_date(3i)"=>"25", "release_date(2i)"=>"11", "release_date(1i)"=>"1992", "description"=>"teste"}, "commit"=>"Update Movie", "id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[33mUPDATE "movies" SET "description" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["description", "teste"], ["updated_at", 2017-01-26 23:28:55 UTC], ["id", 1]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 31ms (ActiveRecord: 8.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 21:28:55 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 210ms (Views: 173.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:29:16 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 208ms (Views: 172.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 21:29:18 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 206ms (Views: 171.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1/edit" for ::1 at 2017-01-26 21:29:21 -0200
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/edit.html.erb within layouts/application
+  Rendered movies/edit.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 210ms (Views: 174.5ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/movies/1" for ::1 at 2017-01-26 21:29:25 -0200
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cQ9H2BMf4sQkrE+OSH6MCkMrcH+CJwl4JO2J3B/84Y9fiF6zDWXQC4ZCiIbKkHSNe1780VLEDSvPfjRRPqFPIA==", "movie"=>{"title"=>"Alladin", "release_date(3i)"=>"25", "release_date(2i)"=>"11", "release_date(1i)"=>"1992", "description"=>""}, "commit"=>"Update Movie", "id"=>"1"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE "movies" SET "description" = ?, "updated_at" = ? WHERE "movies"."id" = ?[0m  [["description", ""], ["updated_at", 2017-01-26 23:29:25 UTC], ["id", 1]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/movies/1
+Completed 302 Found in 17ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 21:29:25 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 206ms (Views: 168.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:36:17 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 266ms (Views: 231.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:37:01 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 217ms (Views: 181.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:37:20 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 660ms (Views: 610.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:38:30 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 238ms (Views: 203.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for ::1 at 2017-01-26 21:39:05 -0200
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 276ms (Views: 238.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies/1" for ::1 at 2017-01-26 21:39:07 -0200
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.0ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 204ms (Views: 157.6ms | ActiveRecord: 0.0ms)
+
+
